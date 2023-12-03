@@ -6,7 +6,7 @@
             </div>
             <div class="col-lg-4 col-8">
                 <button class="btn rounded-pill btn-outline-primary btn-block">
-                    <span style="font-size: 25px">Rp. {{ number_format($sisa, 0) }}</span>
+                    <span style="font-size: 25px">Rp. {{ number_format($ttlDebit -  $ttlKredit, 0) }}</span>
                 </button>
             </div>
             <div class="col-lg-4 col-12">

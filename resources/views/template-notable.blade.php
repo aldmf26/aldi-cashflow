@@ -3,9 +3,13 @@
         @php
             function getSumBulan($bulan,$tahun)
             {
-                $data = DB::selectOne("select sum(debit) as debit, sum(kredit) as kredit from tb_transaksi WHERE MONTH(tgl) = '$bulan' AND  YEAR(tgl) = '$tahun'");
+                $id = auth()->user()->id;
+                $data = DB::selectOne("select sum(debit) as debit, sum(kredit) as kredit 
+                            from tb_transaksi 
+                            WHERE MONTH(tgl) = '$bulan' AND  YEAR(tgl) = '$tahun' AND user_id = '$id'
+                            ");
                
-                return $data->kredit - $data->debit;
+                return $data->debit - $data->kredit;
             }
             $currentMonth = date('n'); // Bulan saat ini
             $currentYear = date('Y'); // Tahun saat ini
