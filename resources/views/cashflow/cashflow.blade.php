@@ -34,8 +34,8 @@
 
                     @foreach ($datas as $no => $d)
                         @php
-                            $debit = (int) Crypt::decrypt($d->debit);
-                            $kredit = (int) Crypt::decrypt($d->kredit);
+                            $debit = $d->debit;
+                            $kredit = $d->kredit;
                         @endphp
                         <tr>
                             <td>{{ $no + 1 }}</td>
@@ -46,7 +46,7 @@
                             <td align="right">
                                 <a href="#" id_transaksi="{{ $d->id_transaksi }}"
                                     class="edit btn btn-sm btn-primary"><i class="fas fa-pen"></i></a>
-                                <a class="btn btn-sm btn-danger delete_nota" no_nota="{{ $d->id_transaksi }}"
+                                <a class="btn btn-sm btn-danger delete_nota" tgl="{{ $d->tgl }}" no_nota="{{ $d->id_transaksi }}"
                                     href="#" data-bs-toggle="modal" data-bs-target="#delete"><i
                                         class="fas fa-trash"></i>
                                 </a>
@@ -67,8 +67,7 @@
                                 <h5 class="text-danger ms-4 mt-4"><i class="fas fa-trash"></i> Hapus Data</h5>
                                 <p class=" ms-4 mt-4">Apa anda yakin ingin menghapus ?</p>
                                 <input type="hidden" class="no_nota" name="no_nota">
-                                <input type="hidden" name="tgl1" value="{{ $tgl1 }}">
-                                <input type="hidden" name="tgl2" value="{{ $tgl2 }}">
+                                <input type="hidden" class="tglDelete" name="tglDelete">
                             </div>
                         </div>
                         <div class="modal-footer">
@@ -91,6 +90,9 @@
                 $(document).on('click', '.delete_nota', function() {
                     var no_nota = $(this).attr('no_nota');
                     $('.no_nota').val(no_nota);
+                    var tgl = $(this).attr('tgl');
+                    $('.tglDelete').val(tgl);
+                   
                 })
                 $(document).on('click', '.edit', function() {
                     var id = $(this).attr('id_transaksi')

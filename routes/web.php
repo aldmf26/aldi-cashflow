@@ -45,6 +45,7 @@ Route::middleware('auth')->group(function () {
             Route::get('/edit', 'edit')->name('edit');
             Route::post('/update', 'update')->name('update');
             Route::get('/keluar', 'keluar')->name('keluar');
+            Route::get('/tglChart', 'tglChart')->name('tglChart');
             Route::post('/destroy', 'destroy')->name('destroy');
         });
     Route::controller(UserController::class)

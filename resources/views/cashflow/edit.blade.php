@@ -9,8 +9,8 @@
     </thead>
     <tbody>
         @php
-            $debit = (int) Crypt::decrypt($detail->debit);
-            $kredit = (int) Crypt::decrypt($detail->kredit);
+            $debit = $detail->debit;
+            $kredit = $detail->kredit;
         @endphp
         <tr>
             <input type="hidden" name="id_transaksi" value="{{ $detail->id_transaksi }}">
@@ -27,7 +27,6 @@
             </td>
             <td>
                 <input name="ket" type="text" value="{{ $detail->ket }}" id="ket" class="form-control">
-
             </td>
         </tr>
     </tbody>

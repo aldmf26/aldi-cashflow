@@ -22,8 +22,8 @@ class CashflowController extends Controller
         $ttlDebit = 0;
         $ttlKredit = 0;
         foreach ($datas as $d) {
-            $debit = (int) Crypt::decrypt($d->debit);
-            $kredit = (int) Crypt::decrypt($d->kredit);
+            $debit = $d->debit;
+            $kredit = $d->kredit;
             $ttlDebit += $debit;
             $ttlKredit += $kredit;
         }
@@ -44,6 +44,7 @@ class CashflowController extends Controller
 
     public function add()
     {
+        
         $data = [
             'title' => 'Tambah Cashflow'
         ];
@@ -54,8 +55,7 @@ class CashflowController extends Controller
     {
         $nominal = str_replace('.', '', $r->nominal);
         $pilihan = $r->pilihan;
-        $nominal = Crypt::encrypt($nominal);
-        $nol = Crypt::encrypt('0');
+        $nol = 0;
         DB::table('tb_transaksi')->insert([
             'user_id' => auth()->user()->id,
             'debit' => $pilihan == 'uangMasuk' ? $nominal : $nol,
@@ -70,28 +70,59 @@ class CashflowController extends Controller
         $data = [
             'detail' => DB::table('tb_transaksi')->where('id_transaksi', $r->id_transaksi)->first()
         ];
-        return view('cashflow.edit',$data);
+        return view('cashflow.edit', $data);
     }
 
     public function update(Request $r)
     {
         $debit = str()->remove(',', $r->debit);
         $kredit = str()->remove(',', $r->kredit);
-        $debit = Crypt::encrypt($debit);
-        $kredit = Crypt::encrypt($kredit);
         DB::table('tb_transaksi')->where('id_transaksi', $r->id_transaksi)->update([
             'debit' => $debit,
             'kredit' => $kredit,
             'tgl' => $r->tgl,
             'ket' => $r->ket
         ]);
-        return redirect()->route('cashflow.index')->with('sukses', 'Berhasil update data');
-
+        return redirect()->route('cashflow.index', [
+            'period' => 'costume',
+            'tgl1' => date('Y-m-01', strtotime($r->tgl)),
+            'tgl2' => date('Y-m-t', strtotime($r->tgl))
+        ])->with('sukses', 'Berhasil update data');
     }
 
     public function destroy(Request $r)
     {
         DB::table('tb_transaksi')->where('id_transaksi', $r->no_nota)->delete();
-        return redirect()->route('cashflow.index')->with('sukses', 'Berhasil hapus data');
+        return redirect()->route('cashflow.index', [
+            'period' => 'costume',
+            'tgl1' => date('Y-m-01', strtotime($r->tglDelete)),
+            'tgl2' => date('Y-m-t', strtotime($r->tglDelete))
+        ])->with('sukses', 'Berhasil hapus data');
+    }
+
+    public function tglChart(Request $r)
+    {
+        $datas = DB::table('tb_transaksi as a')
+            ->where('user_id', auth()->user()->id)
+            ->whereMonth('tgl', $r->bulan)
+            ->whereYear('tgl', $r->tahun)
+            ->orderBy('id_transaksi', 'DESC')
+            ->get();
+
+        $ttlDebit = 0;
+        $ttlKredit = 0;
+
+        foreach ($datas as $d) {
+            $debit = $d->debit;
+            $kredit = $d->kredit;
+            $ttlDebit += $debit;
+            $ttlKredit += $kredit;
+        }
+        $totalTgl = cal_days_in_month(CAL_GREGORIAN, $r->bulan, $r->tahun);
+        $daysArray = range(1, $totalTgl);
+        return json_encode([
+            'total' => $ttlDebit - $ttlKredit,
+            'totalTgl' => $daysArray
+        ]);
     }
 }
