@@ -44,7 +44,7 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <h4 class="float-start card-title">Uang Keluar {{ $currentYear }} </h4>
+                        <h4 class="float-start">Uang Keluar {{ $currentYear }} </h4>
                         <a class="float-end btn btn-sm btn-primary" href="{{ route('cashflow.add') }}"><i class="fas fa-plus"></i> Cashflow</a>
                     </div>
                     <div class="card-body">
