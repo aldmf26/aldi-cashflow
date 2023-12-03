@@ -1,24 +1,11 @@
 <x-theme.app title="Dashboard" table="T">
     <x-slot name="slot">
         @php
-            function getSumBulan($bulan)
+            function getSumBulan($bulan,$tahun)
             {
-                $datas = DB::table('tb_transaksi as a')
-                    ->where('user_id', auth()->user()->id)
-                    ->whereMonth('tgl', $bulan)
-                    ->whereYear('tgl', date('Y'))
-                    ->orderBy('id_transaksi', 'DESC')
-                    ->get();
-
-                $ttlDebit = 0;
-                $ttlKredit = 0;
-                foreach ($datas as $d) {
-                    $debit = $d->debit;
-                    $kredit = $d->kredit;
-                    $ttlDebit += $debit;
-                    $ttlKredit += $kredit;
-                }
-                return $ttlDebit - $ttlKredit;
+                $data = DB::selectOne("select sum(debit) as debit, sum(kredit) as kredit from tb_transaksi WHERE MONTH(tgl) = '$bulan' AND  YEAR(tgl) = '$tahun'");
+               
+                return $data->kredit - $data->debit;
             }
             $currentMonth = date('n'); // Bulan saat ini
             $currentYear = date('Y'); // Tahun saat ini
@@ -28,9 +15,8 @@
             $bulan = $currentMonth;
             $tahun = $currentYear;
 
-            for ($i = 1; $i < 12; $i++) {
-                $listSum[] = abs(getSumBulan($bulan));
-
+            for ($i = 0; $i < 12; $i++) {
+                $listSum[] = abs(getSumBulan($bulan,$tahun));
                 $bulan--;
                 if ($bulan == 1) {
                     $bulan = 12;
