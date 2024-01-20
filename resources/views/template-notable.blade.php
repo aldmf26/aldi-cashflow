@@ -27,8 +27,8 @@
                     $tahun--;
                 }
             }
-            $labels = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Agu', 'Sep', 'Okt', 'Nov'];
-            $listSumJson = json_encode(array_reverse($listSum));
+            $labels = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Agu', 'Sep', 'Okt', 'Nov','Des'];
+            $listSumJson = json_encode($listSum);
         @endphp
         <div class="row">
             <div class="col-md-12">
@@ -43,68 +43,6 @@
                     </div>
                 </div>
             </div>
-            {{-- <div class="col-md-6">
-                <div class="card">
-                    <div class="card-header">
-                        <div class="row">
-                            <div class="col-lg-3">
-                                <h4 class="card-title">Line Chart</h4>
-                            </div>
-                            <div class="col-lg-9">
-                                <table>
-                                    <tr>
-                                        <td>Bulan : </td>
-                                        <td>
-                                            <select class="form-control" id="selectedMonth">
-                                                @php
-                                                    $bulan = [
-                                                        1 => 'Jan',
-                                                        2 => 'Feb',
-                                                        3 => 'Mar',
-                                                        4 => 'Apr',
-                                                        5 => 'Mei',
-                                                        6 => 'Jun',
-                                                        7 => 'Jul',
-                                                        8 => 'Agu',
-                                                        9 => 'Sep',
-                                                        10 => 'Okt',
-                                                        11 => 'Nov',
-                                                        12 => 'Des',
-                                                    ];
-                                                @endphp
-                                                @for ($i = 1; $i <= 12; $i++)
-                                                    <option value="{{ $i }}">{{ $bulan[$i] }}</option>
-                                                @endfor
-                                                <!-- Tambahkan option untuk bulan 2 hingga 12 -->
-                                            </select>
-                                        </td>
-                                        <td>Tahun : </td>
-                                        <td>
-                                            <select class="form-control" id="selectedYear">
-                                                <option value="2022">2022</option>
-                                                <option value="2023" selected>2023</option>
-                                                <!-- Tambahkan option untuk tahun-tahun lainnya -->
-                                            </select>
-                                        </td>
-                                        <td>
-                                            <button class="btn btn-sm btn-primary" id="showData">Tampilkan</button>
-                                        </td>
-                                    </tr>
-
-                                </table>
-
-                            </div>
-
-                        </div>
-
-
-                    </div>
-                    <div class="card-body">
-                        <canvas id="line" width="440" height="220"
-                            style="display: block; box-sizing: border-box; height: 220px; width: 440px;"></canvas>
-                    </div>
-                </div>
-            </div> --}}
         </div>
 
         @section('scripts')
