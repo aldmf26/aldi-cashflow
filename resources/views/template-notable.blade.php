@@ -40,10 +40,20 @@
                 <div class="card">
                     <div class="card-header">
                         <h4 class="float-start">Uang Keluar {{ $tahun }} </h4>
+                        
                         <a class="float-end btn btn-sm btn-primary" href="{{ route('cashflow.add') }}"><i
                                 class="fas fa-plus"></i> Cashflow</a>
+                        
+                        
                     </div>
                     <div class="card-body">
+                        <h6 for="" class="float-start mt-2 me-2">Tahun :</h6>
+
+                        <select style="width:80px" name="" id=""
+                            class="form-control selectTahun float-start ms-2">
+                            <option selected value="2024">2024</option>
+                            <option value="2023">2023</option>
+                        </select>
                         <canvas id="myChart" width="440" height="220"
                             style="display: block; box-sizing: border-box; height: 220px; width: 440px;"></canvas>
                     </div>
@@ -53,6 +63,12 @@
 
         @section('scripts')
             <script>
+                $('.selectTahun').val("{{request()->get('tahun')}}" || 2024);
+                $('.selectTahun').change(function (e) { 
+                    e.preventDefault();
+                    const tahun = $(this).val()
+                    window.location.href = "{{route('dashboard')}}?tahun="+tahun;
+                });
                 // Misalkan Anda memiliki data yang akan ditampilkan dalam grafik
                 const labels = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Agu', 'Sep', 'Okt', 'Nov', 'Des']
                 console.log(labels)
@@ -115,7 +131,6 @@
 
 
                 };
-               
             </script>
         @endsection
 
