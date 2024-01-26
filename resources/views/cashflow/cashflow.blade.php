@@ -70,7 +70,9 @@
                     });
                 }
 
-                $(document).on('click', '.delete_nota', function() {
+                $(document).on('click', '.delete_nota', function(e) {
+                    e.preventDefault()
+
                     var no_nota = $(this).attr('no_nota');
                     $('.no_nota').val(no_nota);
                     var tgl = $(this).attr('tgl');
@@ -94,7 +96,8 @@
                     });
                 })
 
-                $(document).on('click', '.edit', function() {
+                $(document).on('click', '.edit', function(e) {
+                    e.preventDefault()
                     var id = $(this).attr('id_transaksi')
                     $("#edit").modal('show')
                     $.ajax({
