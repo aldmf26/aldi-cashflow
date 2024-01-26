@@ -61,7 +61,7 @@
 
                 </form>
             </div>
-        </div> 
+        </div>
 
 
         @section('scripts')
@@ -140,18 +140,7 @@
                             $('#btnLoading').hide()
                             $('#btnLanjutkan').show()
                             $('#angka').val('')
-
-                            Toastify({
-                                text: "Data Berhasil di masukkan",
-                                duration: 5000,
-                                style: {
-                                    background: "#EAF7EE",
-                                    color: "#7F8B8B"
-                                },
-                                close: true,
-                                position: 'center',
-                                avatar: "https://cdn-icons-png.flaticon.com/512/190/190411.png"
-                            }).showToast();
+                            toast("Data Berhasil di masukkan")
                         }
                     });
                 })

@@ -61,6 +61,21 @@
     $('.select2_readonly').select2({
         disabled: true
     });
+
+    function toast(pesan) {
+        Toastify({
+            text: pesan,
+            duration: 5000,
+            style: {
+                background: "#EAF7EE",
+                color: "#7F8B8B",
+                fontSize: "20px"
+            },
+            close: true,
+            position: 'center',
+            avatar: "https://cdn-icons-png.flaticon.com/512/190/190411.png"
+        }).showToast();
+    }
 </script>
 @if (session()->has('sukses'))
     <script>

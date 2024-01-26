@@ -43,6 +43,7 @@ Route::middleware('auth')->group(function () {
             Route::get('/', 'index')->name('index');
             Route::get('/add', 'add')->name('add');
             Route::get('/edit', 'edit')->name('edit');
+            Route::get('/load_tbl', 'load_tbl')->name('load_tbl');
             Route::post('/update', 'update')->name('update');
             Route::get('/keluar', 'keluar')->name('keluar');
             Route::get('/tglChart', 'tglChart')->name('tglChart');
