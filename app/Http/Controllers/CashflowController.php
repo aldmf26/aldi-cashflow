@@ -13,6 +13,7 @@ class CashflowController extends Controller
         $tgl = tanggalFilter($r);
         $tgl1 =  $tgl['tgl1'];
         $tgl2 =  $tgl['tgl2'];
+        
         $datas = DB::table('tb_transaksi as a')
             ->where('user_id', auth()->user()->id)
             ->whereBetween('tgl', [$tgl1, $tgl2])

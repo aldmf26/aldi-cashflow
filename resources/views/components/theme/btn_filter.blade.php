@@ -46,7 +46,7 @@
             </div>
             <div class="col-lg-8 tahun_muncul mt-2">
                 <label for="">Tahun</label>
-                <select name="tahunfilter" id="" class="selectView tahun">
+                <select name="tahun" id="" class="selectView tahun">
                     <option {{date('Y') == '2022' ? 'selected' : ''}} value="2022">2022</option>
                     <option {{date('Y') == '2023' ? 'selected' : ''}} value="2023">2023</option>
                     <option {{date('Y') == '2024' ? 'selected' : ''}} value="2024">2024</option>
