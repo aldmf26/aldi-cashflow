@@ -56,6 +56,4 @@
 
     </x-theme.modal>
 </form>
-<script>
-    $('.selectView').select2()
-</script>
+
