@@ -39,17 +39,17 @@
             <div class="col-lg-4 bulan_muncul mt-2">
                 <label for="">Tahun</label>
                 <select name="tahun" id="" class="selectView bulan">
-                    <option {{date('Y') == '2022' ? 'selected' : ''}} value="2022">2022</option>
-                    <option {{date('Y') == '2023' ? 'selected' : ''}} value="2023">2023</option>
                     <option {{date('Y') == '2024' ? 'selected' : ''}} value="2024">2024</option>
+                    <option {{date('Y') == '2025' ? 'selected' : ''}} value="2025">2025</option>
+                    <option {{date('Y') == '2026' ? 'selected' : ''}} value="2026">2025</option>
                 </select>
             </div>
             <div class="col-lg-8 tahun_muncul mt-2">
                 <label for="">Tahun</label>
                 <select name="tahun" id="" class="selectView tahun">
-                    <option {{date('Y') == '2022' ? 'selected' : ''}} value="2022">2022</option>
-                    <option {{date('Y') == '2023' ? 'selected' : ''}} value="2023">2023</option>
                     <option {{date('Y') == '2024' ? 'selected' : ''}} value="2024">2024</option>
+                    <option {{date('Y') == '2025' ? 'selected' : ''}} value="2025">2025</option>
+                    <option {{date('Y') == '2026' ? 'selected' : ''}} value="2026">2026</option>
                 </select>
             </div>
         </div>
