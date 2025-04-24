@@ -65,11 +65,11 @@
         </div>
         <!-- Image Content -->
         <div class="lg:w-1/2 flex justify-center relative animate-slide-up">
-            <div class="relative parallax">
-                <img id="mockupImage" src="{{ asset('img/bg-cash.svg') }}" alt="CatatDuit App Mockup" class="w-full max-w-lg lg:max-w-2xl rounded-xl shadow-2xl transform transition-all duration-500 ease-in-out cursor-pointer">
-                <div class="absolute inset-0 bg-blue-400/30 blur-3xl rounded-xl -z-10"></div>
+                <div class="relative parallax">
+                    <img id="mockupImage" src="{{ asset('img/bg-cash.svg') }}" alt="CatatDuit App Mockup" class="w-full max-w-lg lg:max-w-2xl rounded-xl shadow-2xl transform transition-transform duration-500 ease-in-out cursor-pointer">
+                    <div class="absolute inset-0 bg-blue-400/30 blur-3xl rounded-xl -z-10"></div>
+                </div>
             </div>
-        </div>
     </div>
 </section>
 
@@ -191,25 +191,15 @@
                 transform: translateY(-20px);
             }
         }
-        .fullscreen {
-        position: fixed !important;
-        top: 0 !important;
-        left: 0 !important;
-        width: 100vw !important;
-        height: 100vh !important;
-        object-fit: contain !important;
-        z-index: 1000 !important;
-        background: rgba(0, 0, 0, 0.8) !important;
-        margin: 0 !important;
-        padding: 0 !important;
-        border-radius: 0 !important;
-    }
+        .zoomed {
+            transform: scale(1.2) !important;
+        }
     </style>
     <script>
-    const mockupImage = document.getElementById('mockupImage');
-    mockupImage.onclick = function() {
-        mockupImage.classList.toggle('fullscreen');
-    };
-</script>
+        const mockupImage = document.getElementById('mockupImage');
+        mockupImage.onclick = function() {
+            mockupImage.classList.toggle('zoomed');
+        };
+    </script>
 </body>
 </html>
