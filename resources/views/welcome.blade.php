@@ -77,20 +77,20 @@
     <section id="pricing" class="py-20 bg-gray-100 relative overflow-hidden">
         <!-- Background Decorative Elements for Pricing -->
         <div class="absolute inset-0 opacity-10">
-            <svg class="w-full h-full" viewBox="0 0 1440 600" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <!-- Diagonal Lines -->
-                <path d="M0 0L1440 600M0 150L1440 750M0 300L1440 900M0 450L1440 1050" stroke="url(#grad4)" stroke-width="1" opacity="0.5"/>
-                <!-- Geometric Shapes -->
-                <rect x="200" y="100" width="100" height="100" fill="none" stroke="url(#grad4)" stroke-width="1" opacity="0.4" transform="rotate(45 250 150)"/>
-                <rect x="1100" y="400" width="120" height="120" fill="none" stroke="url(#grad4)" stroke-width="1" opacity="0.4" transform="rotate(45 1160 460)"/>
-                <defs>
-                    <linearGradient id="grad4" x1="0%" y1="0%" x2="100%" y2="0%">
-                        <stop offset="0%" style="stop-color:#3B82F6;stop-opacity:1" />
-                        <stop offset="100%" style="stop-color:#1F2937;stop-opacity:1" />
-                    </linearGradient>
-                </defs>
-            </svg>
-        </div>
+        <svg class="w-full h-full" viewBox="0 0 1440 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- Diagonal Lines -->
+            <path d="M0 0L1440 600M0 150L1440 750M0 300L1440 900M0 450L1440 1050" stroke="url(#grad5)" stroke-width="1" opacity="0.5"/>
+            <!-- Geometric Shapes -->
+            <rect x="200" y="100" width="100" height="100" fill="none" stroke="url(#grad5)" stroke-width="1" opacity="0.4" transform="rotate(45 250 150)"/>
+            <rect x="1100" y="400" width="120" height="120" fill="none" stroke="url(#grad5)" stroke-width="1" opacity="0.4" transform="rotate(45 1160 460)"/>
+            <defs>
+                <linearGradient id="grad5" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" style="stop-color:#F9FAFB;stop-opacity:1" />
+                    <stop offset="100%" style="stop-color:#F9FAFB;stop-opacity:0" />
+                </linearGradient>
+            </defs>
+        </svg>
+    </div>
 
         <div class="container mx-auto px-4 relative z-10">
             <h2 class="text-4xl lg:text-5xl font-bold text-center mb-12 text-gray-800">Pilih Paket yang Tepat untukmu</h2>
