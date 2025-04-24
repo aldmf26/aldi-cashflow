@@ -10,7 +10,7 @@
     <title>{{ $title }}</title>
 
     <link rel="stylesheet" href="{{ asset('theme') }}/assets/css/main/app.css">
-    <link rel="shortcut icon" href="/assets/img/icon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="{{ asset('img/logocash-tf.png') }}" type="image/x-icon">
     <link rel="stylesheet" href="{{ asset('theme') }}/assets/css/pages/fontawesome.css">
     <link rel="stylesheet"
         href="{{ asset('theme') }}/assets/extensions/datatables.net-bs5/css/dataTables.bootstrap6.min.css">
