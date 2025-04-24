@@ -6,7 +6,9 @@ use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return redirect('login');
+    return view('welcome');
+
+    // return redirect('login');
 });
 Route::middleware('auth')->group(function () {
     Route::get('/template1', function () {
