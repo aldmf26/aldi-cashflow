@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CatatDuit - Kelola Keuangan dengan Mudah</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
 </head>
 <body class="bg-gray-100 font-inter text-gray-800">
     <!-- Hero Section -->
@@ -65,11 +66,11 @@
         </div>
         <!-- Image Content -->
         <div class="lg:w-1/2 flex justify-center relative animate-slide-up">
-                <div class="relative parallax">
-                    <img id="mockupImage" src="{{ asset('img/bg-cash.svg') }}" alt="CatatDuit App Mockup" class="w-full max-w-lg lg:max-w-2xl rounded-xl shadow-2xl transform transition-transform duration-500 ease-in-out cursor-pointer">
-                    <div class="absolute inset-0 bg-blue-400/30 blur-3xl rounded-xl -z-10"></div>
-                </div>
+            <div class="relative parallax">
+                <img id="mockupImage" src="{{ asset('img/bg-cash.svg') }}" alt="CatatDuit App Mockup" class="w-full max-w-lg lg:max-w-2xl rounded-xl shadow-2xl transform cursor-pointer">
+                <div class="absolute inset-0 bg-blue-400/30 blur-3xl rounded-xl -z-10"></div>
             </div>
+        </div>
     </div>
 </section>
 
@@ -195,11 +196,91 @@
             transform: scale(1.2) !important;
         }
     </style>
-    <script>
-        const mockupImage = document.getElementById('mockupImage');
-        mockupImage.onclick = function() {
-            mockupImage.classList.toggle('zoomed');
+    <!-- JavaScript for GSAP Full-Page Transition -->
+<script>
+    const mockupImage = document.getElementById('mockupImage');
+    const body = document.body;
+    let isFullScreen = false;
+
+    mockupImage.addEventListener("click", function() {
+        if (!isFullScreen) {
+            // Transition to full-screen
+            animateToFullScreen(mockupImage);
+        } else {
+            // Transition back to original position
+            animateToOriginal(mockupImage);
+        }
+        isFullScreen = !isFullScreen;
+    });
+
+    function animateToFullScreen(fromHero) {
+        const clone = fromHero.cloneNode(true);
+        const from = calculatePosition(fromHero);
+        const to = {
+            top: 0,
+            left: 0,
+            width: window.innerWidth,
+            height: window.innerHeight
         };
-    </script>
+
+        gsap.set([fromHero], { visibility: "hidden" });
+        gsap.set(clone, { position: "fixed", margin: 0, zIndex: 1000 });
+
+        body.appendChild(clone);
+
+        const style = {
+            x: to.left - from.left,
+            y: to.top - from.top,
+            width: to.width,
+            height: to.height,
+            autoRound: false,
+            ease: "power1.inOut",
+            onComplete: () => {
+                clone.id = "cloneImage";
+                clone.style.background = "rgba(0, 0, 0, 0.8)";
+                clone.style.objectFit = "contain";
+            }
+        };
+
+        gsap.set(clone, from);
+        gsap.to(clone, 0.5, style);
+    }
+
+    function animateToOriginal(toHero) {
+        const clone = document.getElementById('cloneImage');
+        const from = calculatePosition(clone);
+        const to = calculatePosition(toHero);
+
+        const style = {
+            x: to.left - from.left,
+            y: to.top - from.top,
+            width: to.width,
+            height: to.height,
+            autoRound: false,
+            ease: "power1.inOut",
+            onComplete: () => {
+                gsap.set(toHero, { visibility: "visible" });
+                body.removeChild(clone);
+            }
+        };
+
+        gsap.to(clone, 0.5, style);
+    }
+
+    function calculatePosition(element) {
+        const rect = element.getBoundingClientRect();
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+        const scrollLeft = window.pageXOffset || document.documentElement.scrollLeft || document.body.scrollLeft || 0;
+        const clientTop = document.documentElement.clientTop || document.body.clientTop || 0;
+        const clientLeft = document.documentElement.clientLeft || document.body.clientLeft || 0;
+
+        return {
+            top: Math.round(rect.top + scrollTop - clientTop),
+            left: Math.round(rect.left + scrollLeft - clientLeft),
+            height: rect.height,
+            width: rect.width,
+        };
+    }
+</script>
 </body>
 </html>
