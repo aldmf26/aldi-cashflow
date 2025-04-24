@@ -25,8 +25,7 @@
             </div>
             <!-- Image Content -->
             <div class="lg:w-1/2 flex justify-center relative animate-slide-up">
-                <img src="https://via.placeholder.com/800x600?text=CatatDuit+Mockup" alt="CatatDuit App Mockup" class="w-full max-w-lg lg:max-w-2xl rounded-lg shadow-2xl transform -rotate-6">
-                <img src="https://via.placeholder.com/300x600?text=CatatDuit+Phone" alt="CatatDuit Phone Mockup" class="absolute bottom-0 right-0 w-1/3 max-w-xs rounded-lg shadow-2xl transform rotate-12">
+                <img src="{{ asset('img/hero-cashflow.jpg') }}" alt="CatatDuit App Mockup" class="w-full max-w-lg lg:max-w-2xl rounded-lg shadow-2xl transform -rotate-6">
             </div>
         </div>
     </section>
