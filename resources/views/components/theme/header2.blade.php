@@ -1,10 +1,11 @@
 <div class="header-top">
     <div class="container">
-        <div class="logo text-center">
-        <a href="dashboard" style="display: inline-block; text-decoration: none;">
-    <img src="{{ asset('img/logocash-tf.png') }}" alt="Logo" style="width: 280%;object-fit:cover;">
-</a>
-        </div>
+    <div class="logo text-center">
+    <a href="dashboard" style="display: inline-block; text-decoration: none;">
+        <img src="{{ asset('img/logocash-tf.png') }}" alt="Logo" style="width: 100%; max-width: 280px; object-fit:cover;">
+    </a>
+</div>
+
         <div class="header-top-right">
 
             <div class="dropdown">
