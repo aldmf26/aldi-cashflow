@@ -1,7 +1,7 @@
 <div class="header-top">
     <div class="container">
         <div class="logo text-center">
-            <a href="dashboard"><img src="{{asset('img/logocash-tf.png')}}" alt="Logo"></a>
+            <a href="dashboard"><img width="200" src="{{asset('img/logocash-tf.png')}}" alt="Logo"></a>
             <h5>CatatDuit</h5>
         </div>
         <div class="header-top-right">
