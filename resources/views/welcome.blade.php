@@ -60,7 +60,7 @@
         <!-- Image Content -->
         <div class="lg:w-1/2 flex justify-center relative animate-slide-up">
             <div class="relative parallax">
-                <img src="{{ asset('img/bg-biru.png') }}" alt="CatatDuit App Mockup" class="w-full max-w-lg lg:max-w-2xl rounded-xl shadow-2xl transform">
+                <img src="{{ asset('img/bg-cash.svg') }}" alt="CatatDuit App Mockup" class="w-full max-w-lg lg:max-w-2xl rounded-xl shadow-2xl transform">
             </div>
         </div>
     </div>
