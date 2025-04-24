@@ -7,7 +7,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
 </head>
-<body class="bg-gray-900 font-sans text-white">
+<body class="font-sans text-white">
     <!-- Hero Section -->
     <section class="min-h-screen flex items-center justify-center bg-gray-900">
         <div class="container mx-auto px-4 flex flex-col lg:flex-row items-center justify-between">
@@ -25,7 +25,7 @@
             </div>
             <!-- Image Content -->
             <div class="lg:w-1/2 flex justify-center relative animate-slide-up">
-                <img src="{{ asset('img/hero-cashflow.jpg') }}" alt="CatatDuit App Mockup" class="w-full max-w-lg lg:max-w-2xl rounded-lg shadow-2xl transform -rotate-6">
+                <img src="{{ asset('img/hero-cashflow.jpg') }}" alt="CatatDuit App Mockup" class="w-full max-w-lg lg:max-w-2xl rounded-lg shadow-2xl transform">
             </div>
         </div>
     </section>
