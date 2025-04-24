@@ -53,7 +53,7 @@
             <p class="text-lg sm:text-xl lg:text-2xl mb-8 text-gray-200 leading-relaxed max-w-md mx-auto lg:mx-0">
                 Catat pemasukan dan pengeluaran dengan mudah. Mulai sekarang, gratis!
             </p>
-            <a href="#pricing" class="inline-block bg-gradient-to-r from-blue-500 to-blue-600 text-white font-semibold py-4 px-8 rounded-full hover:from-blue-600 hover:to-blue-700 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 animate-pulse">
+            <a href="{{route('login')}}" class="inline-block bg-gradient-to-r from-blue-500 to-blue-600 text-white font-semibold py-4 px-8 rounded-full hover:from-blue-600 hover:to-blue-700 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 animate-pulse">
                 Coba Sekarang
             </a>
         </div>
