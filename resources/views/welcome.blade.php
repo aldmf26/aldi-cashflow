@@ -2,11 +2,11 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
+    <link rel="shortcut icon" href="{{ asset('img/logocash-tf.png') }}" type="image/x-icon">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CatatDuit - Kelola Keuangan dengan Mudah</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
-    <link rel="shortcut icon" href="{{ asset('img/icon.ico') }}" type="image/x-icon">
 </head>
 <body class="bg-gray-100 font-inter text-gray-800">
     <!-- Hero Section -->
