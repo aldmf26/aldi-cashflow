@@ -2,7 +2,7 @@
     <div class="container">
         <div class="logo text-center">
         <a href="dashboard" style="display: inline-block; text-decoration: none;">
-    <img width="100" src="{{ asset('img/logocash-tf.png') }}" alt="Logo" style="width: 100%;">
+    <img src="{{ asset('img/logocash-tf.png') }}" alt="Logo" style="width: 100%;">
 </a>
         </div>
         <div class="header-top-right">
