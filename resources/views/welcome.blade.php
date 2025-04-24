@@ -9,7 +9,7 @@
 </head>
 <body class="bg-gray-100 font-inter text-gray-800">
     <!-- Hero Section -->
-    <section class="min-h-screen flex items-center justify-center bg-blue-900 relative overflow-hidden">
+    <section class="min-h-screen flex items-center justify-center bg-[#011e86] relative overflow-hidden">
     <!-- Background Decorative Elements -->
     <div class="absolute inset-0 bg-gradient-to-br from-blue-900/80 via-blue-800/60 to-blue-700/40"></div>
     <!-- Dynamic Lines Pattern -->
