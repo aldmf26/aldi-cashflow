@@ -2,7 +2,7 @@
     <div class="container">
         <div class="logo text-center">
             <a href="dashboard"><img src="{{asset('img/logocash-tf.png')}}" alt="Logo"></a>
-            <h5>Cashflow</h5>
+            <h5>CatatDuit</h5>
         </div>
         <div class="header-top-right">
 
