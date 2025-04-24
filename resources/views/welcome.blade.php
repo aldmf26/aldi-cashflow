@@ -25,7 +25,7 @@
             </div>
             <!-- Image Content -->
             <div class="lg:w-1/2 flex justify-center relative animate-slide-up">
-                <img src="{{ asset('img/hero-cashflow.jpg') }}" alt="CatatDuit App Mockup" class="w-full max-w-lg lg:max-w-2xl rounded-lg shadow-2xl transform">
+                <img src="{{ asset('img/Desain tanpa judul.png') }}" alt="CatatDuit App Mockup" class="w-full max-w-lg lg:max-w-2xl rounded-lg shadow-2xl transform">
             </div>
         </div>
     </section>
