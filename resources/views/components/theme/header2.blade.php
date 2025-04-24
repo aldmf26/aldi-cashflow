@@ -1,8 +1,9 @@
 <div class="header-top">
     <div class="container">
         <div class="logo text-center">
-            <a href="dashboard"><img width="100" src="{{asset('img/logocash-tf.png')}}" alt="Logo"></a>
-            <h5>CatatDuit</h5>
+        <a href="dashboard" style="display: inline-block; text-decoration: none;">
+    <img width="100" src="{{ asset('img/logocash-tf.png') }}" alt="Logo" style="width: 100%;">
+</a>
         </div>
         <div class="header-top-right">
 
