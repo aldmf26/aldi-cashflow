@@ -11,14 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('aktiva', function (Blueprint $table) {
-            $table->integer('id_aktiva');
-            $table->integer('id_kelompok');
-            $table->string('nm_aktiva');
-            $table->date('tgl');
-            $table->double('h_perolehan');
-            $table->string('admin');
-            $table->double('biaya_depresiasi');
+        Schema::create('categoris', function (Blueprint $table) {
+            $table->id();
+            $table->foreignId('user_id');
+            $table->string('nama');
+            $table->enum('type', ['debit', 'kredit']);
             $table->timestamps();
         });
     }
@@ -28,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('aktiva');
+        Schema::dropIfExists('categoris');
     }
 };

@@ -11,6 +11,7 @@
                         <span>Dashboard</span>
                     </a>
                 </li>
+                
                 <li class="menu-item">
                     <a href="{{ route('cashflow.add') }}"
                         class='menu-link {{ request()->route()->getName() == 'cashflow.add'
@@ -27,26 +28,23 @@
                         <span>Transaksi</span>
                     </a>
                 </li>
-                @php
-                    $navbar = DB::table('navbar')
-                        ->orderBy('urutan', 'ASC')
-                        ->get();
-                    
-                @endphp
-                {{-- @foreach ($navbar as $d)
-                    @php
-                        $string = $d->isi;
-                        $string = str_replace(['[', ']', "'"], '', $string);
-                        $array = explode(', ', $string);
-                    @endphp
-                    <li class="menu-item">
-                        <a href="{{ route($d->route) }}"
-                            class='menu-link 
-                    {{ in_array(request()->route()->getName(),$array)? 'active_navbar_new': '' }}'>
-                            <span>{{ ucwords($d->nama) }}</span>
-                        </a>
-                    </li>
-                @endforeach --}}
+                <li class="menu-item">
+                    <a href="{{ route('kategori.index') }}"
+                        class='menu-link {{ request()->route()->getName() == 'kategori.index'
+                            ? 'active_navbar_new'
+                            : '' }}'>
+                        <span>Kategori</span>
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a href="{{ route('wallet.index') }}"
+                        class='menu-link {{ request()->route()->getName() == 'wallet.index'
+                            ? 'active_navbar_new'
+                            : '' }}'>
+                        <span>Dompet</span>
+                    </a>
+                </li>
+               
             </ul>
         </div>
     </nav>

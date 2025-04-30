@@ -11,11 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('penjualan', function (Blueprint $table) {
-            $table->integerIncrements('id_penjualan');
-            $table->integer('id_produk');
-            $table->integer('id_satuan');
-            $table->timestamps();
+        Schema::table('tb_transaksi', function (Blueprint $table) {
+            $table->foreignId('categori_id');
+            $table->foreignId('wallet_id');
         });
     }
 
@@ -24,6 +22,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('penjualan');
+        Schema::table('tb_transaksi', function (Blueprint $table) {
+            //
+        });
     }
 };

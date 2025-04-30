@@ -11,12 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('kelompok_aktiva', function (Blueprint $table) {
-            $table->integerIncrements('id_kelompok');
-            $table->string('nm_kelompok');
-            $table->string('umur');
-            $table->double('tarif');
-            $table->string('barang_kelompok');
+        Schema::create('wallets', function (Blueprint $table) {
+            $table->id();
+            $table->foreignId('user_id');
+            $table->string('nama');
+            $table->double('saldo')->default(0);
             $table->timestamps();
         });
     }
@@ -26,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('kelompok_aktiva');
+        Schema::dropIfExists('wallets');
     }
 };

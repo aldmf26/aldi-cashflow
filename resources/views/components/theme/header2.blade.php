@@ -22,7 +22,12 @@
                     <div class="text">
                         <h6 class="user-dropdown-name">{{ ucwords(auth()->user()->name) }}</h6>
                         <p class="user-dropdown-status text-sm text-muted">
-                            {{ ucwords(auth()->user()->posisi->nm_posisi) }}
+                            @php
+                                $status = auth()->user()->subscription_status;
+                                $bg = $status == 'premium' ? 'bg-primary' : 'bg-info';
+                            @endphp
+                            <span class="badge {{$bg}}">{{ ucwords($status) }}</span>
+                            
                         </p>
                     </div>
                 </a>

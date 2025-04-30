@@ -3,6 +3,7 @@
     </x-slot>
     <x-slot name="cardBody">
         <h5 class="mb-3">Tambah Cashflow</h5>
+        
         <div class="row">
             <div class="col-lg-3">
                 <div class="form-group">
@@ -13,7 +14,7 @@
             <div class="col-lg-5">
                 <div class="form-group">
                     <label for="">Keterangan</label>
-                    <input type="text" id="ket" class="form-control">
+                    <input placeholder="Keterangan (optional)" type="text" id="ket" class="form-control">
                 </div>
             </div>
             <div class="col-lg-4">
@@ -28,7 +29,28 @@
                     <label class="btn btn-outline-primary" for="primary-outlined">Masuk</label>
                 </div>
             </div>
-
+            @langganan
+            <div class="col-6">
+                <div class="form-group">
+                    <label for="">Kategori</label>
+                    <select name="kategori" class="select2_add" id="">
+                        <option value="">- Pilih Kategori -</option>
+                        <option value="1">1</option>
+                        <option value="3">3</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="form-group">
+                    <label for="">Dompet</label>
+                    <select name="dompet" class="select2_add" id="">
+                        <option value="">- Pilih Dompet -</option>
+                        <option value="1">1</option>
+                        <option value="3">3</option>
+                    </select>
+                </div>
+            </div>
+            @endlangganan
         </div>
         <div class="row">
             @php

@@ -8,6 +8,11 @@
         @method('patch')
 
         <div>
+            <x-input-label for="name" :value="__('Status Berlangganan')" />
+            <x-text-input disabled id="name"  name="name" type="text" class=" block w-full" :value="old('subscription_status', $user->subscription_status)"
+                required autofocus autocomplete="name" />
+        </div>
+        <div>
             <x-input-label for="name" :value="__('Name')" />
             <x-text-input id="name" name="name" type="text" class=" block w-full" :value="old('name', $user->name)"
                 required autofocus autocomplete="name" />

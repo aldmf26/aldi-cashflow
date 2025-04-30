@@ -26,6 +26,8 @@
 <script src="{{ asset('theme') }}/assets/js/pages/horizontal-layout.js"></script>
 <script src="{{ asset('theme') }}/assets/extensions/dragula/dragula.min.js"></script>
 <script src="{{ asset('theme') }}/assets/js/pages/ui-todolist.js"></script>
+
+
 <script>
     $('.select2').select2({
         dropdownParent: $('#tambah .modal-content')

@@ -148,10 +148,6 @@
             transform: rotate(360deg);
         }
 
-        .card:hover .card-title {
-            opacity: 0;
-        }
-
         .card:hover .card-text {
             opacity: 1;
         }
